@@ -7,7 +7,7 @@ import RecentOpportunityTable from "../components/dashboard/RecentOpportunityTab
 import CompetitorTable from "../components/dashboard/CompetitorTable";
 import StartupRecommendation from "../components/dashboard/StartupRecommendation";
 import DashboardFilters from "../components/dashboard/DashboardFilters";
-import api from "../api/api";
+import api from "../Api/api";
 
 import {
   Building2,

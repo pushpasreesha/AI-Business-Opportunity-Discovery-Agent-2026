@@ -1,7 +1,7 @@
 import { BrainCircuit, Mail, Lock, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import api from "../api/api";
+import api from "../Api/api";
 
 function Register() {
   const navigate = useNavigate();

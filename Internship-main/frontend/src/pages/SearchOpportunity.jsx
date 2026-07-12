@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/layout/Layout";
-import api from "../api/api";
+import api from "../Api/api";
 
 function SearchOpportunity() {
 

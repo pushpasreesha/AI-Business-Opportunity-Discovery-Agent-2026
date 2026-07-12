@@ -7,7 +7,7 @@ import MarketInsights from "../components/market/MarketInsights";
 import GrowthIndicators from "../components/market/GrowthIndicators";
 import NewsCategories from "../components/market/NewsCategories";
 import Recommendations from "../components/market/Recommendations";
-import api from "../api/api";
+import api from "../Api/api";
 
 import {
   Building2,
