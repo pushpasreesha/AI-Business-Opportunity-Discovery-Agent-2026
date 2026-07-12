@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Layout from "../components/layout/Layout";
 import MetricCard from "../components/dashboard/MetricCard";
 import api from "../api/api";
@@ -21,14 +21,7 @@ function CustomerPainPoints() {
 
 
 
-  useEffect(() => {
-
-    analyzeCustomerPainPoints(
-      "All Apps",
-      "USA"
-    );
-
-  }, []);
+  
 
 
 

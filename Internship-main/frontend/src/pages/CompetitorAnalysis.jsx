@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Layout from "../components/layout/Layout";
 import MetricCard from "../components/dashboard/MetricCard";
 import api from "../api/api";
@@ -17,11 +17,6 @@ function CompetitorAnalysis() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-
-    analyzeCompetitors("AI", "USA");
-
-  }, []);
 
   const analyzeCompetitors = async (
     selectedIndustry = industry,

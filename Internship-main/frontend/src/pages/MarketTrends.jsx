@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Layout from "../components/layout/Layout";
 import MetricCard from "../components/dashboard/MetricCard";
 import TopCompaniesTable from "../components/market/TopCompaniesTable";
@@ -25,9 +25,6 @@ function MarketTrends() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    analyzeMarket("AI", "USA");
-  }, []);
 
   const analyzeMarket = async (
     selectedIndustry = industry,

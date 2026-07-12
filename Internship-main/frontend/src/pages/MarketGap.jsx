@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Layout from "../components/layout/Layout";
 import MetricCard from "../components/dashboard/MetricCard";
 import api from "../api/api";
@@ -24,9 +24,7 @@ function MarketGap() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    analyzeMarketGap("AI", "USA");
-  }, []);
+
 
   const analyzeMarketGap = async (
     selectedIndustry = industry,
