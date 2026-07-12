@@ -7,3 +7,15 @@ Internship-main/node_modules/
 Internship-main/dist/
 Internship-main/.tanstack/
 backend/datasets/
+Internship-main/src/
+Internship-main/package.json
+Internship-main/package-lock.json
+Internship-main/bun.lock
+Internship-main/bunfig.toml
+Internship-main/tsconfig.json
+Internship-main/vite.config.ts
+Internship-main/eslint.config.js
+Internship-main/components.json
+Internship-main/AGENTS.md
+Internship-main/.lovable/
+Internship-main/public/
