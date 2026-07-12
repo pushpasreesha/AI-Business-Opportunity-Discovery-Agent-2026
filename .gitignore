@@ -6,7 +6,19 @@ backend/**/__pycache__/
 Internship-main/node_modules/
 Internship-main/dist/
 Internship-main/.tanstack/
-backend/datasets/
+backend/datasets/amazon reviews/
+backend/datasets/news category dataset/
+backend/datasets/pytrends-master/
+backend/datasets/startup investments/acquisitions.csv
+backend/datasets/startup investments/degrees.csv
+backend/datasets/startup investments/funding_rounds.csv
+backend/datasets/startup investments/funds.csv
+backend/datasets/startup investments/investments.csv
+backend/datasets/startup investments/ipos.csv
+backend/datasets/startup investments/milestones.csv
+backend/datasets/startup investments/offices.csv
+backend/datasets/startup investments/people.csv
+backend/datasets/startup investments/relationships.csv
 Internship-main/src/
 Internship-main/package.json
 Internship-main/package-lock.json
