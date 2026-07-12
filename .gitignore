@@ -1,0 +1,9 @@
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+Internship-main/node_modules/
+Internship-main/dist/
+Internship-main/.tanstack/
+backend/datasets/
