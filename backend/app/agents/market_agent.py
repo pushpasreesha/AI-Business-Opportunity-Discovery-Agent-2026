@@ -8,7 +8,7 @@ class MarketResearchAgent:
 
         self.name = "Market Research Agent"
 
-        self.company_file = "datasets/startup investments/objects.csv"
+        self.company_file = "datasets/startup investments/objects_slim.csv"
 
         self.industry_mapping = {
 
