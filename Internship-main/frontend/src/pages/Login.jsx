@@ -1,15 +1,18 @@
 import { BrainCircuit, Mail, Lock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { GoogleLogin } from "@react-oauth/google";
 import api from "../Api/api";
 
 function Login() {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Normal Login
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -34,11 +37,33 @@ function Login() {
     }
   };
 
+  // Google Login
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      const response = await api.post("/auth/google", {
+        token: credentialResponse.credential,
+      });
+
+      localStorage.setItem("token", response.data.access_token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err);
+      setError("Google login failed.");
+    }
+  };
+
+  const handleGoogleError = () => {
+    setError("Google login failed.");
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex">
       {/* Left Side */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-10">
         <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-10">
+          {/* Logo */}
           <div className="flex items-center gap-3 mb-8">
             <div className="bg-blue-600 p-3 rounded-2xl text-white">
               <BrainCircuit size={28} />
@@ -55,6 +80,7 @@ function Login() {
             </div>
           </div>
 
+          {/* Heading */}
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
             Welcome Back
           </h2>
@@ -63,6 +89,7 @@ function Login() {
             Sign in to continue
           </p>
 
+          {/* Error */}
           {error && (
             <div className="mb-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3">
               {error}
@@ -131,7 +158,22 @@ function Login() {
               {loading ? "Signing in..." : "Login"}
             </button>
 
-            {/* Register Button */}
+            {/* Divider */}
+            <div className="flex items-center my-2">
+              <hr className="flex-1 border-gray-300" />
+              <span className="px-3 text-gray-500 text-sm">OR</span>
+              <hr className="flex-1 border-gray-300" />
+            </div>
+
+            {/* Google Login */}
+            <div className="flex justify-center">
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+              />
+            </div>
+
+            {/* Register */}
             <Link
               to="/register"
               className="block w-full text-center border border-gray-300 py-3 rounded-xl hover:bg-gray-100 transition"
@@ -152,7 +194,7 @@ function Login() {
           <p className="text-lg opacity-90 leading-8">
             Discover startup opportunities using AI-powered market research,
             competitor analysis, customer pain points, news trends, and
-            intelligent business recommendationsâ€”all in one dashboard.
+            intelligent business recommendations—all in one dashboard.
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-5">
