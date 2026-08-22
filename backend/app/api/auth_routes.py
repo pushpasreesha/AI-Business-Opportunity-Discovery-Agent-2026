@@ -10,7 +10,8 @@ from app.schemas.user_schema import (
 from app.services.auth_service import (
     register_user,
     login_user,
-    google_login
+    google_login,
+    verify_otp
 )
 
 from app.utils.deps import get_current_user
@@ -22,12 +23,23 @@ auth_router = APIRouter(
 )
 
 
-@auth_router.post("/register", response_model=Token)
+@auth_router.post("/register")
 async def register(request: UserRegister):
     return await register_user(
         request.name,
         request.email,
         request.password
+    )
+
+
+@auth_router.post("/verify-otp", response_model=Token)
+async def verify_registration_otp(
+    email: str,
+    otp: str
+):
+    return await verify_otp(
+        email,
+        otp
     )
 
 

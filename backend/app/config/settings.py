@@ -11,10 +11,19 @@ class Settings(BaseSettings):
 
     JWT_SECRET_KEY: str = "change-this-to-a-random-secret-key"
     JWT_ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080  # 7 days
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
 
     # Google OAuth
     GOOGLE_CLIENT_ID: str = ""
+
+    # Gmail SMTP
+    SMTP_EMAIL: str = ""
+    SMTP_APP_PASSWORD: str = ""
+    SMTP_HOST: str = "smtp.gmail.com"
+    SMTP_PORT: int = 587
+
+    # OTP
+    OTP_EXPIRE_MINUTES: int = 10
 
     class Config:
         env_file = ".env"
